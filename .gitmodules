@@ -1,0 +1,6 @@
+[submodule "files-to-prompt-py"]
+	path = files-to-prompt-py
+	url = https://github.com/simonw/files-to-prompt
+[submodule "files-to-prompt-ts"]
+	path = files-to-prompt-ts
+	url = https://github.com/fry69/files-to-prompt-ts
