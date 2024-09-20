@@ -1,0 +1,85 @@
+#+TITLE: files-to-prompt
+#+AUTHOR: Jason Walsh <j@wal.sh>
+
+* files-to-prompt
+
+Convert files to prompts for Large Language Models (LLMs) in Emacs.
+
+** Installation
+
+This package is not yet available on MELPA. To install, clone this repository and add it to your load-path.
+
+#+BEGIN_SRC sh
+git clone --recursive https://github.com/jwalsh/files-to-prompt-el.git
+#+END_SRC
+
+** Usage
+
+#+BEGIN_SRC elisp
+(require 'files-to-prompt)
+(files-to-prompt)
+#+END_SRC
+
+** Related Projects
+
+This project is inspired by and compatible with:
+
+- [[https://github.com/simonw/files-to-prompt][files-to-prompt]] (Python version by Simon Willison)
+- [[https://github.com/fry69/files-to-prompt-ts][files-to-prompt-ts]] (TypeScript version)
+
+Both of these projects are included as submodules in this repository.
+
+For more information on the concept and usage of files-to-prompt, see Simon Willison's blog post:
+[[https://simonwillison.net/2024/Apr/8/files-to-prompt/][Concatenating files into prompts for LLMs]]
+
+** files-to-prompt Comparison Table
+
+| Feature / Tool                    | files-to-prompt (Python) | files-to-prompt (TypeScript) | files-to-prompt (Emacs Lisp) | ripgrep | tree | find |
+|-----------------------------------+--------------------------+------------------------------+------------------------------+---------+------+------|
+| Recursive file traversal          | ✓                        | ✓                            | ✓                            | ✓       | ✓    | ✓    |
+| Respect .gitignore                | ✓                        | ✓                            | ✓                            | ✓       | ✗    | ✗    |
+| Include hidden files option       | ✓                        | ✓                            | ✓                            | ✓       | ✓    | ✓    |
+| Custom ignore patterns            | ✓                        | ✓                            | ✓                            | ✓       | ✗    | ✗    |
+| Output to file                    | ✓                        | ✓                            | ✓                            | ✓       | ✓    | ✓    |
+| Claude XML output format          | ✓                        | ✓                            | ✓                            | ✗       | ✗    | ✗    |
+| Org-mode output format            | ✗                        | ✗                            | ✓                            | ✗       | ✗    | ✗    |
+| Binary file detection             | ✗                        | ✓                            | ✓                            | ✓       | ✗    | ✗    |
+| Jupyter Notebook conversion       | ✗                        | ✓                            | ✗                            | ✗       | ✗    | ✗    |
+| stdin input support               | ✗                        | ✓                            | ✗                            | ✓       | ✗    | ✗    |
+| Cross-platform support            | ✓                        | ✓                            | ✓                            | ✓       | △    | △    |
+| Emacs integration                 | ✗                        | ✗                            | ✓                            | ✗       | ✗    | ✗    |
+| Performance optimizations         | △                        | ✓                            | △                            | ✓       | ✓    | ✓    |
+| File content search               | ✗                        | ✗                            | ✗                            | ✓       | ✗    | ✗    |
+| Directory structure visualization | ✗                        | ✗                            | ✗                            | ✗       | ✓    | ✗    |
+| Token/File length limiting        | ✗                        | ✓                            | ✓                            | △       | ✗    | ✗    |
+
+*** Legend:
+
+- ✓ : Supported
+- ✗ : Not supported
+- △ : Partially supported or platform-dependent
+
+*** Notes:
+
+1. The Emacs Lisp version has unique features like Org-mode output and seamless Emacs integration.
+2. The TypeScript version has more advanced features like binary file detection, Jupyter Notebook conversion, and token limiting.
+3. The Python version is simpler but covers the core functionality well.
+4. The Emacs Lisp version supports token limiting through the `max-tokens` parameter.
+5. Ripgrep can limit output size, but it's based on line count or file size, not tokens.
+6. Token/File length limiting is crucial for managing output size, especially for LLM inputs.
+
+This comparison highlights that each files-to-prompt implementation has its strengths:
+
+- Python: Simplicity and ease of use
+- TypeScript: Advanced features, cross-platform support, and token limiting
+- Emacs Lisp: Emacs integration, Org-mode support, and token limiting
+
+The token/file length limiting feature in the TypeScript and Emacs Lisp versions is particularly valuable for preparing prompts for LLMs, as it helps prevent the output from becoming too large for the model's context window.
+
+** Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+** License
+
+This project is licensed under the MIT License - see the [[file:LICENSE][LICENSE]] file for details.

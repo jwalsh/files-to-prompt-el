@@ -1,0 +1,41 @@
+# Emacs specific
+*.elc
+.cask/
+dist/
+
+# Elisp byte-compiled files
+*.elc
+
+# Org-mode
+.org-id-locations
+*_archive
+
+# Python specific
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# TypeScript/JavaScript specific
+node_modules/
+*.js
+*.js.map
+*.d.ts
+
+# Editor specific
+.vscode/
+.idea/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Project specific
+.files-to-prompt-*/
+output.org
+output.txt
+output.xml
+
+# Keep submodules
+!files-to-prompt-py/
+!files-to-prompt-ts/
