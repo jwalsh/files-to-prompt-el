@@ -1,8 +1,6 @@
 #+TITLE: files-to-prompt
 #+AUTHOR: Jason Walsh <j@wal.sh>
 
-* files-to-prompt
-
 Convert files to prompts for Large Language Models (LLMs) in Emacs.
 
 ** Installation
